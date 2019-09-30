@@ -1,0 +1,7 @@
+p, admin, ad_campaign, GET
+p, admin, ad_campaign, LIST
+p, area_ad_admin, campaign, WRITE
+p, area_ad_admin, adgroup, WRITE
+p, area_ad_admin, adcreative, WRITE
+g, admin, area_ad_admin
+g, kevin, admin
