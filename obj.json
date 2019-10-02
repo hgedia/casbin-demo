@@ -1,0 +1,38 @@
+[{
+    "oid" : "object-id-01",
+    "manufacturerid" : "manu-id-01",
+    "elements": {
+    "origin": {
+	    "createdAt": "2018-04-02T00:00:00Z",
+    	"kpcNo": "SG 004882",
+    	"origin": "Scotland",
+    	"ownerId": "owner-uid-1"
+    },
+    "supplier": {
+         "supplierName" : "MC Donalds",
+         "mine" : "Highlands"
+     },
+     "InvoiceNo"  : "100",
+     "InvoiceDate" : " 2018-04-02T00:00:00Z",
+     "Weight" : "3 carat"
+    }
+},
+{
+    "oid" : "object-id-02",
+    "manufacturerid" : "manu-id-02",
+    "elements": {
+    "origin": {
+	    "createdAt": "2018-04-02T00:00:00Z",
+    	"kpcNo": "NY 006121",
+    	"origin": "USA",
+    	"ownerId": "owner-uid-2"
+    },
+    "supplier": {
+         "supplierName" : "Burger King",
+         "mine" : "Manhattan"
+     },
+     "InvoiceNo"  : "120",
+     "InvoiceDate" : " 2018-01-02T00:00:00Z",
+     "Weight" : "5 carat"
+    }
+}]

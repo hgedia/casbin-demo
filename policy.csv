@@ -1,4 +1,3 @@
-p, :id, Origin, read
 p, group_1, InvoiceNo, read
 p, group_1, InvoiceDate, read
 p, group_1, ManufacturerId, read
