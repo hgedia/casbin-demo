@@ -1,13 +1,12 @@
-p, group_1, InvoiceNo, read
-p, group_1, InvoiceDate, read
-p, group_1, ManufacturerId, read
-p, group_1, Origin, read
-p, group_1, MineName, read
-p, group_2, Origin, read
-p, group_2, KPNumber, read
-p, group_2, Weight, read
-g, admin, group_1
-g, admin, group_2
-g, haresh, group_1
-g, priyav, group_2
-g, david, admin
+p, role:manu-id-01_group, InvoiceNo
+p, role:manu-id-01_group, InvoiceDate
+p, role:manu-id-01_group, Origin
+p, role:manu-id-02_group_1, InvoiceNo
+p, role:manu-id-02_group_1, InvoiceDate
+p, role:manu-id-02_group_1, Origin
+p, role:manu-id-02_group_2, Origin
+p, role:manu-id-02_group_2, KPNumber
+p, role:manu-id-02_group_2, Weight
+p, haresh, dia, oid, muid, Origin, deny
+g, haresh, role:manu-id-02_group_2
+g, haresh, role:manu-id-01_group
