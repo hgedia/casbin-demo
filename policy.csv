@@ -1,7 +1,14 @@
-p, admin, ad_campaign, GET
-p, admin, ad_campaign, LIST
-p, area_ad_admin, campaign, WRITE
-p, area_ad_admin, adgroup, WRITE
-p, area_ad_admin, adcreative, WRITE
-g, admin, area_ad_admin
-g, kevin, admin
+p, :id, Origin, read
+p, group_1, InvoiceNo, read
+p, group_1, InvoiceDate, read
+p, group_1, ManufacturerId, read
+p, group_1, Origin, read
+p, group_1, MineName, read
+p, group_2, Origin, read
+p, group_2, KPNumber, read
+p, group_2, Weight, read
+g, admin, group_1
+g, admin, group_2
+g, haresh, group_1
+g, priyav, group_2
+g, david, admin

@@ -8,21 +8,35 @@ import (
 
 func main() {
 	e, _ := casbin.NewEnforcer("model.conf", "policy.csv")
-	//admin
-	e.AddPermissionForUser("admin", "ad_campaign", "GET")
-	e.AddPermissionForUser("admin", "ad_campaign", "LIST")
-	//area-admin
-	e.AddPermissionForUser("area_ad_admin", "campaign", "WRITE")
-	e.AddPermissionForUser("area_ad_admin", "adgroup", "WRITE")
-	e.AddPermissionForUser("area_ad_admin", "adcreative", "WRITE")
-	//assigns role of area_ad_admin to admin.
-	e.AddRoleForUser("admin", "area_ad_admin")
 
-	//end users.
-	e.AddRoleForUser("kevin", "admin")
+	e.AddPermissionForUser(":id", "Origin", "read")
+
+	//Group 1 Permission
+	e.AddPermissionForUser("group_1", "InvoiceNo", "read")
+	e.AddPermissionForUser("group_1", "InvoiceDate", "read")
+	e.AddPermissionForUser("group_1", "ManufacturerId", "read")
+	e.AddPermissionForUser("group_1", "Origin", "read")
+	e.AddPermissionForUser("group_1", "MineName", "read")
+
+	e.AddPermissionForUser("group_2", "Origin", "read")
+	e.AddPermissionForUser("group_2", "KPNumber", "read")
+	e.AddPermissionForUser("group_2", "Weight", "read")
+
+	//Admin gets all permisssions
+	e.AddRoleForUser("admin", "group_1")
+	e.AddRoleForUser("admin", "group_2")
+
+	//Haresh gets only group 1
+	e.AddRoleForUser("haresh", "group_1")
+	e.AddRoleForUser("priyav", "group_2")
+	e.AddRoleForUser("david", "admin")
 	e.SavePolicy()
 
-	//print.
-	result, _ := e.GetImplicitPermissionsForUser("kevin")
-	fmt.Printf("%#v", result)
+	//print all permissions
+	result, _ := e.GetImplicitPermissionsForUser("haresh")
+	fmt.Printf("%#v\n", result)
+
+	//Check if user has permission
+
+	fmt.Println(e.HasPermissionForUser("haresh", "group_1"))
 }
